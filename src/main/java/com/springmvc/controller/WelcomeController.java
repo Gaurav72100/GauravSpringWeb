@@ -21,5 +21,10 @@ public class WelcomeController {
 	
 		return "index";
 	}
+	@RequestMapping("/hello")
+	public String display(@RequestParam(name="user", defaultValue="..........") String username) {
+		System.out.println("UserName is"+username);
+		return "index";
+	}
 	
 }
