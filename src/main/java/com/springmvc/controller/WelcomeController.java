@@ -1,8 +1,10 @@
 package com.springmvc.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class WelcomeController {
@@ -27,5 +29,11 @@ public class WelcomeController {
 		return "index";
 	}
 	
+	@RequestMapping("/get/{id}")
+	@ResponseBody
+	public String pathVar(@PathVariable(name="id", required=false)int userId) {
+		System.out.println("Value of path Variable is:" + userId);
+		return "<h2>This is response not a view Spring mvc provides ResponseBody annotation that simplifies you always not return view<h2>";
+	}
 	
 }
