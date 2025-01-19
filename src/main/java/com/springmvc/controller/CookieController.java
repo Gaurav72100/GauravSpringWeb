@@ -15,7 +15,7 @@ public class CookieController {
 	@ResponseBody
 	public String setCookie(HttpServletResponse response) {
 		Cookie cookie = new Cookie("username" , "GauravKumar");
-		cookie.setMaxAge(7 * 24 * 60 * 60);
+		cookie.setMaxAge(60);
 		response.addCookie(cookie);
 		return "Cookies has been set!";
 		
