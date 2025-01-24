@@ -9,9 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.springmvc.model.Employee;
 
-
-
-
 @Repository
 public class EmployeeDAO {
 	
@@ -33,8 +30,19 @@ public class EmployeeDAO {
 	}
 	
 	@Transactional
-	public void delete(Employee employee) {
-		 hibernateTemplate.delete(employee);
+	public void delete(int id) {
+		Employee employee = hibernateTemplate.load(Employee.class, id);
+		if(employee != null) {
+			 hibernateTemplate.delete(employee);
+		}
+	    
+	}
+	
+	
+	@Transactional
+	public void updateEmp(Employee employee) {
+		hibernateTemplate.update(employee);
 	}
 
 }
+

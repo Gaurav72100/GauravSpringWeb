@@ -29,7 +29,13 @@ public class EmployeeService {
 	public List<Employee>  getAllEmployees(){
 		return employeedao.getAllEmployees();
 	}
-	public void deleteEmpoyee(Employee employee) {
-		employeedao.delete(employee);
+	
+	public void updatedEmpl(Employee employee) {
+		 employeedao.updateEmp(employee);
+	}
+
+
+	public void deleteById(int id) {
+		 employeedao.delete(id);
 	}
 }

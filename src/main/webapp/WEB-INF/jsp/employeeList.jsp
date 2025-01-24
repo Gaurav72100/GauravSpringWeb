@@ -22,10 +22,11 @@
             <td>${employee.id}</td>
             <td>${employee.name}</td>
             <td>${employee.department}</td>
-            <td>${employee.age}</td>
+            <td>${employee.salary}</td>
         </tr>
     </c:forEach>
 </table>
 
+ <a href="/GauravSpringWeb/delEmployee?id=${employee.id}">Delete</a>
 </body>
 </html>

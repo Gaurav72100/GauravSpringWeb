@@ -14,13 +14,13 @@
 			    name="name" /><br />
 		<br />  <label for="department">Department:</label> <input type="text"
 			    id="department" name="department" /><br />
-		<br />  <label for="age">Age:</label> <input type="number" id="age"
-			     name="age" />
+		<br />  <label for="salary">Salary:</label> <input type="number" id="salary"
+			     name="salary" />
 			     <br />
 		<br />
 
 		<button type="submit">Submit</button> <br/>
-		<button type="submit">Delete</button>
+		
 	</form>
 </body>
 </html>

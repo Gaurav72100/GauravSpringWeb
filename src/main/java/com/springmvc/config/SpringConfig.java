@@ -57,7 +57,7 @@ public class SpringConfig implements WebMvcConfigurer {
 		
 		hibernateprop.put("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
 		hibernateprop.put("hibernate.show_sql", "true");
-		hibernateprop.put("hibernate.hbm2ddl.auto", "drop");
+		hibernateprop.put("hibernate.hbm2ddl.auto", "update");
 	    sessionfactory.setHibernateProperties(hibernateprop);
 	    
 	    return sessionfactory;
