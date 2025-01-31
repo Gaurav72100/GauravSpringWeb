@@ -38,4 +38,10 @@ public class EmployeeService {
 	public void deleteById(int id) {
 		 employeedao.delete(id);
 	}
+
+
+	public Employee getUserById(int id) {
+		
+		return employeedao.getUserById(id);
+	}
 }

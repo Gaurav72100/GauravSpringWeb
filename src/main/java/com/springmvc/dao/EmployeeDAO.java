@@ -38,6 +38,11 @@ public class EmployeeDAO {
 	    
 	}
 	
+	@Transactional
+	 public Employee getUserById(int id) {
+	        return hibernateTemplate.get(Employee.class, id);
+	    }
+
 	
 	@Transactional
 	public void updateEmp(Employee employee) {
