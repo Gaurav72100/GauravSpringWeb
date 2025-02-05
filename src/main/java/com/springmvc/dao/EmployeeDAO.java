@@ -43,6 +43,12 @@ public class EmployeeDAO {
 	        return hibernateTemplate.get(Employee.class, id);
 	    }
 
+	@Transactional
+	public List<String> getEmail() {
+		return (List<String>) hibernateTemplate.find("SELECT u.email FROM Employee u");
+	}
+	
+	
 	
 	@Transactional
 	public void updateEmp(Employee employee) {

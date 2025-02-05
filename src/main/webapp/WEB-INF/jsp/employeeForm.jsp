@@ -9,7 +9,7 @@
 <body>
 	<h2>Employee Form</h2>
 	
-	<form action="${employee.id == null ? 'addEmployee' : 'updateEmployee'}"
+	<form action="${employee.id == 0 ? 'addEmployee' : 'updateEmployee'}"
 		method="post">
 		
 		 <input type="hidden" name="id" value="${employee.id}"/>
@@ -17,12 +17,12 @@
 			    name="name" /><br />
 		<br /> 
 		
-		 <label for="department">Department:</label> <input type="text" value="${employee.department }"
-			    id="department" name="department" /><br />
+		 <label for="password">Password:</label> <input type="text" value="${employee.password }"
+			    id="password" name="password" /><br />
 		<br /> 
 		
-		 <label for="salary">Salary:</label> <input type="number" id="salary" value="${employee.salary }"
-			     name="salary" />
+		 <label for="email">Email:</label> <input type="email" id="email" value="${employee.email }"
+			     name="email" />
 			   
 			     <br /><br />
 

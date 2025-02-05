@@ -26,7 +26,7 @@ public class EmployeeService {
 	public void saveEmployee(Employee employee) {
 		employeedao.save(employee);
 	}
-	public List<Employee>  getAllEmployees(){
+	public List<Employee> getAllEmployees(){
 		return employeedao.getAllEmployees();
 	}
 	
@@ -43,5 +43,10 @@ public class EmployeeService {
 	public Employee getUserById(int id) {
 		
 		return employeedao.getUserById(id);
+	}
+	
+	public List<String> emails() {
+		
+	return	employeedao.getEmail();
 	}
 }

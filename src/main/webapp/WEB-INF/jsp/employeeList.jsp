@@ -17,16 +17,16 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Department</th>
-        <th>Salary</th>
+        <th>Password</th>
+        <th>Email</th>
         <th>Actions</th>
     </tr>
     <c:forEach var="employee" items="${employees}">
         <tr>
             <td>${employee.id}</td>
             <td>${employee.name}</td>
-            <td>${employee.department}</td>
-            <td>${employee.salary}</td>
+            <td>${employee.password}</td>
+            <td>${employee.email}</td>
             
             <td><a href="edit/${employee.id }">Edit_User</a><br/>
                  <a href="delEmployee/${employee.id}">Delete</a></td>

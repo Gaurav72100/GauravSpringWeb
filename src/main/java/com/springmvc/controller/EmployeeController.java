@@ -1,18 +1,23 @@
 package com.springmvc.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.springmvc.model.Employee;
 import com.springmvc.service.EmployeeService;
 
-@Controller
-
+@RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class EmployeeController {
 	
 	
@@ -26,6 +31,12 @@ public class EmployeeController {
 		return "employeeList";
 	}
 	
+	@GetMapping("/emp")
+	public List<Employee> getEmp(){
+		
+		return  employeeservice.getAllEmployees();
+	}
+	
 	@GetMapping("/show")
 	public String showForm(Model model) {
 		model.addAttribute("employee", new Employee());
@@ -33,9 +44,12 @@ public class EmployeeController {
 	}
 	
 	@PostMapping("/addEmployee")
-	public String submitData(@ModelAttribute("employee") Employee employee) {
+	@ResponseBody
+	public String submitData(@ModelAttribute Employee employee,Model model) {
+		System.out.println("EmployeeController.submitData()");
+		//System.out.println(employee.getEmail());
 		employeeservice.saveEmployee(employee);
-		return "redirect:/employees";
+		return "Successfull";
 	}
 	
 	@GetMapping("/delEmployee/{id}")
@@ -44,6 +58,22 @@ public class EmployeeController {
 		return "redirect:/employees";
 	}
 	
+	
+	@GetMapping("/login") 
+	@ResponseBody
+	public String login(@RequestParam String email) {
+       
+		for(String emp:employeeservice.emails()) {
+			if(emp.equals(email)) {
+				System.out.println("Found"+ emp);
+				break;
+			}
+			else {
+				System.out.println("NOt Found");
+			}
+		}
+		return "Successful" ;
+	}
 	 
 	 @GetMapping("/edit/{id}")
 	    public String showEditUserForm(@PathVariable("id") int id, Model model) {

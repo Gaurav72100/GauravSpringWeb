@@ -12,39 +12,21 @@ public class Employee {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	private String department;
-	private int salary;
+	private String password;
+	private String email;
 	
 	
 	public Employee() {
 		super();
 	}
-	
-	
-	public Employee(int id,String name, String department, int salary) {
+
+
+	public Employee(int id, String name, String password, String email) {
 		super();
-		this.id=id;
+		this.id = id;
 		this.name = name;
-		this.department = department;
-		this.salary = salary;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getDepartment() {
-		return department;
-	}
-	public void setDepartment(String department) {
-		this.department = department;
-	}
-	public int getSalary() {
-		return salary;
-	}
-	public void setSalary(int salary) {
-		this.salary = salary;
+		this.password = password;
+		this.email = email;
 	}
 
 
@@ -56,6 +38,39 @@ public class Employee {
 	public void setId(int id) {
 		this.id = id;
 	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
+	
 	
 	
 }
