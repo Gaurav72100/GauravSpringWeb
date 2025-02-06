@@ -1,8 +1,10 @@
+
 package com.springmvc.controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,12 +13,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.springmvc.model.Employee;
 import com.springmvc.service.EmployeeService;
 
-@RestController
+@Controller
 @CrossOrigin(origins = "http://localhost:3000")
 public class EmployeeController {
 	
@@ -31,17 +32,13 @@ public class EmployeeController {
 		return "employeeList";
 	}
 	
-	@GetMapping("/emp")
+	@GetMapping(value = "/emp", produces = "application/json")
+	@ResponseBody
 	public List<Employee> getEmp(){
 		
 		return  employeeservice.getAllEmployees();
 	}
 	
-	@GetMapping("/show")
-	public String showForm(Model model) {
-		model.addAttribute("employee", new Employee());
-		return "employeeForm";
-	}
 	
 	@PostMapping("/addEmployee")
 	@ResponseBody
