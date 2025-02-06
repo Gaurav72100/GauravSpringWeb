@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.springmvc.model.Employee;
 
 @Controller
-
 public class EmployeeController {
 	
 	HashMap<Integer,Employee> empdata = new HashMap<Integer,Employee>();
