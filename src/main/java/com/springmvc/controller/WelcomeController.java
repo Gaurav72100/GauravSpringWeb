@@ -11,7 +11,7 @@ public class WelcomeController {
 	@RequestMapping("/")
 	public  String meet() {
 		System.out.println("WelcomeController called");
-	
+	    System.out.println("/ Called.........");
 		return "welcome";
 	}
 	
