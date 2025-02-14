@@ -9,7 +9,7 @@
 <body>
 	<h2>Employee Form</h2>
 	
-	<form action="${employee.id == null ? 'addEmployee' : 'updateEmployee'}"
+	<form action="${employee.id == 0 ? 'addEmployee' : 'updateEmployee'}"
 		method="post">
 		
 		 <input type="hidden" name="id" value="${employee.id}"/>

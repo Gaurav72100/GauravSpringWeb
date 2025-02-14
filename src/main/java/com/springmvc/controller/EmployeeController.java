@@ -52,7 +52,7 @@ public class EmployeeController {
 	        return "employeeForm";
 	    }
 
-	@PostMapping("/updateEmployee")
+	@PostMapping("/edit/updateEmployee")
 		public String updateVal(@ModelAttribute("employee") Employee employee) {
 			employeeservice.updatedEmpl(employee);
 			//model.addAttribute("employee");
