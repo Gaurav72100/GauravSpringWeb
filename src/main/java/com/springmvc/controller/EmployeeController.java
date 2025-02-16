@@ -26,13 +26,6 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeservice;
 	
-	
-//	@GetMapping("/employees")
-//	public String listEmployees(Model model) {
-//		model.addAttribute("employees", employeeservice.getAllEmployees() );
-//		return "employeeList";
-//	}
-	
 	@GetMapping( value="/emp",consumes=MediaType.ALL_VALUE ,produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public List<Employee> getEmp(){
@@ -50,12 +43,6 @@ public class EmployeeController {
 		return "Successfull";
 	}
 	
-//	@GetMapping("/delEmployee/{id}")
-//	public String deleteData(@PathVariable ("id") int id) {
-//		employeeservice.deleteById(id);
-//		return "redirect:/employees";
-//	}
-	
 	
 	@PostMapping("/login") 
 	@ResponseBody
@@ -68,20 +55,7 @@ public class EmployeeController {
 		return "Please signup first" ;
 	}
 	 
-//	 @GetMapping("/edit/{id}")
-//	    public String showEditUserForm(@PathVariable("id") int id, Model model) {
-//	        Employee employee = employeeservice.getUserById(id);
-//	        model.addAttribute("employee", employee);
-//	        return "employeeForm";
-//	    }
 
-//	@PostMapping("/updateEmployee")
-//		public String updateVal(@ModelAttribute("employee") Employee employee) {
-//			employeeservice.updatedEmpl(employee);
-//			//model.addAttribute("employee");
-//			return "redirect:/employees";
-//		}
-	
 
 }
 
